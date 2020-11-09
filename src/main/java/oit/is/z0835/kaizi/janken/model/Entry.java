@@ -1,3 +1,4 @@
+
 package oit.is.z0835.kaizi.janken.model;
 
 import java.util.ArrayList;

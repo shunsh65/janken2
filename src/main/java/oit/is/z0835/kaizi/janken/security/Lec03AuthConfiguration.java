@@ -16,6 +16,7 @@ public class Lec03AuthConfiguration extends WebSecurityConfigurerAdapter {
   @Override
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
+
     // $ sshrun htpasswd -nbBC 10 user1 pAssw0rd
         auth.inMemoryAuthentication().withUser("user1")
         .password("$2y$10$rJ9yqGht2W96MdIJICRQQOuUiYrt2eDokKnDuZZof2DPs83PN6QdC").roles("USER");
@@ -32,6 +33,7 @@ public class Lec03AuthConfiguration extends WebSecurityConfigurerAdapter {
   }
 
   @Bean
+
   PasswordEncoder passwordEncoder() {
     return new BCryptPasswordEncoder();
   }
@@ -47,6 +49,8 @@ public class Lec03AuthConfiguration extends WebSecurityConfigurerAdapter {
     http.csrf().disable();
     http.headers().frameOptions().disable();
   }
+
+
 
 
 
