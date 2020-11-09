@@ -21,8 +21,6 @@ import oit.is.z0835.kaizi.janken.model.User;
 import oit.is.z0835.kaizi.janken.model.UserMapper;
 import oit.is.z0835.kaizi.janken.model.Match;
 import oit.is.z0835.kaizi.janken.model.MatchMapper;
-import oit.is.z0835.kaizi.janken.model.MatchInfo;
-import oit.is.z0835.kaizi.janken.model.MatchInfoMapper;
 
 
 @Controller
@@ -106,7 +104,7 @@ public class Lec02Controller {
   //}
 
 
-
+  //staticでないメソッドなんたらのエラーが出たらAutowiredのつけ忘れ
   @Autowired
   UserMapper UserMapper;
 
