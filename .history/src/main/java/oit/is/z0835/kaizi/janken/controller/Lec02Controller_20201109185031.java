@@ -1,9 +1,7 @@
 package oit.is.z0835.kaizi.janken.controller;
 
 import java.security.Principal;
-
 import java.util.ArrayList;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,15 +15,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import oit.is.z0835.kaizi.janken.model.Janken;
 
-
 import oit.is.z0835.kaizi.janken.model.Entry;
 
 import oit.is.z0835.kaizi.janken.model.User;
 import oit.is.z0835.kaizi.janken.model.UserMapper;
 import oit.is.z0835.kaizi.janken.model.Match;
 import oit.is.z0835.kaizi.janken.model.MatchMapper;
-import oit.is.z0835.kaizi.janken.model.MatchInfo;
-import oit.is.z0835.kaizi.janken.model.MatchInfoMapper;
 
 
 @Controller
@@ -95,29 +90,6 @@ public class Lec02Controller {
     this.entry.addUser(loginUser);
     model.addAttribute("entry", this.entry);
 
-=======
-import oit.is.z0835.kaizi.janken.model.Entry;
-@Controller
-public class Lec02Controller {
-
-  @Autowired
-  private Entry room;
-
-
-  @GetMapping("lec02")
-  public String lec02(ModelMap model, Principal prin) {
-    String loginUser = prin.getName(); // ログインユーザ情報
-    this.room.addUser(loginUser);
-    model.addAttribute("room", this.room);
-    return "lec02.html";
-  }
-
-
-  @PostMapping("/lec02")
-  public String lec02(@RequestParam String name, ModelMap model) {
-    String username = name;
-    model.addAttribute("username", "Hi "+ username);
-
     return "lec02.html";
   }
 
@@ -132,7 +104,7 @@ public class Lec02Controller {
   //}
 
 
-
+  //staticでないメソッドなんたらのエラーが出たらAutowiredのつけ忘れ
   @Autowired
   UserMapper UserMapper;
 

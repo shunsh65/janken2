@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>lec02match</title>
+</head>
+
+<body>
+  <h1>Match</h1>
+  <div th:if="${User3}">
+    <h2>
+      <span>[[${User3.name}]]</span>
+      v.s.<span>[[${User4.name}]]</span>
+    </h2>
+  </div>
+  <a href="/matchjanken?hand=Gu">ぐー</a>
+  <a href="/matchjanken?hand=Tyo">ちょき</a>
+  <a href="/matchjanken?hand=Pa">ぱー</a>
+
+  <div th:if="${myhand}">
+    あなたの手 [[${myhand}]]
+  </div>
+  <div th:if="${myhand}">
+    相手の手 Gu
+  </div>
+  <div th:if="${result}">
+    結果 [[${result}]]
+  </div>
+  <div><a href="/lec02">もどる</a></div>
+
+</body>
+
+</html>
